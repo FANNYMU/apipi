@@ -1,0 +1,16 @@
+{
+  "name": "apipi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx tsc --outDir dist && node dist/main.js",
+    "start": "node dist/main.js",
+    "build": "npx tsc --outDir dist"
+  },
+  "dependencies": {
+    "@types/node": "^24.0.14",
+    "axios": "^1.10.0",
+    "typescript": "^5.8.3"
+  }
+}

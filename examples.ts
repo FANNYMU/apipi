@@ -1,7 +1,10 @@
 // import fs from "fs";
 // import https from "https";
 
-import { Translate } from "./src/core/translate";
+import { QuoteScraperFactory } from "./src/core/factory/QuoteScraperFactory";
+import { ScrapingException } from "./src/types/animeQuotes";
+
+// import { Translate } from "./src/core/translate";
 
 // import apipi from ".";
 
@@ -115,3 +118,46 @@ import { Translate } from "./src/core/translate";
 // // example();
 
 // translateExample();
+// async function animeQuotesExample() {
+//   const scraper = QuoteScraperFactory.createAnimeQuoteScraper();
+
+//   try {
+//     console.log("Fetching random anime quote...");
+//     const randomQuote = await scraper.getRandomQuote();
+
+//     if (randomQuote) {
+//       console.log("\n=== Random Anime Quote ===");
+//       console.log(`Character: ${randomQuote.character}`);
+//       console.log(`Anime: ${randomQuote.anime}`);
+//       console.log(`Episode: ${randomQuote.episode}`);
+//       console.log(`Quote: "${randomQuote.quote}"`);
+//       if (randomQuote.image) {
+//         console.log(`Image: ${randomQuote.image}`);
+//       }
+//       console.log(`Link: ${randomQuote.link}`);
+//     } else {
+//       console.log("No quotes found");
+//     }
+
+//     // Example of getting all quotes
+//     console.log("\n=== Fetching all quotes ===");
+//     const allQuotes = await scraper.getAllQuotes();
+//     console.log(`Total quotes found: ${allQuotes.length}`);
+//   } catch (error) {
+//     if (error instanceof ScrapingException) {
+//       console.error(`Scraping Error: ${error.message}`);
+//       if (error.statusCode) {
+//         console.error(`Status Code: ${error.statusCode}`);
+//       }
+//       if (error.originalError) {
+//         console.error(`Original Error: ${error.originalError.message}`);
+//       }
+//     } else {
+//       console.error("Unexpected error:", error);
+//     }
+//   }
+// }
+
+// if (require.main === module) {
+//   animeQuotesExample().catch(console.error);
+// }

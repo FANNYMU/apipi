@@ -3,3 +3,4 @@
 *.mp4
 /yarn.lock
 /downloads
+/log.txt

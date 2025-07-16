@@ -1,8 +1,8 @@
 // import fs from "fs";
 // import https from "https";
 
-import { QuoteScraperFactory } from "./src/core/factory/QuoteScraperFactory";
-import { ScrapingException } from "./src/types/animeQuotes";
+// import { QuoteScraperFactory } from "./src/core/factory/QuoteScraperFactory";
+// import { ScrapingException } from "./src/types/animeQuotes";
 
 // import { Translate } from "./src/core/translate";
 
@@ -160,4 +160,151 @@ import { ScrapingException } from "./src/types/animeQuotes";
 
 // if (require.main === module) {
 //   animeQuotesExample().catch(console.error);
+// }
+
+// import { spotifydl } from "./src/core/spotify";
+
+// class SpotifyExamples {
+//   private readonly exampleUrls = [
+//     "https://open.spotify.com/track/4iV5W9uYEdYUVa79Axb7Rh",
+//     "https://open.spotify.com/intl-id/track/7qiZfU4dY1lWllzX7mPBI3",
+//     "https://open.spotify.com/track/1A8mOHkHgVrJGhYf4vO8Xg?si=abc123def456",
+//   ];
+
+//   async basicUsage(): Promise<void> {
+//     try {
+//       const url = "https://open.spotify.com/track/4iV5W9uYEdYUVa79Axb7Rh";
+//       const result = await spotifydl(url);
+
+//       console.log("Track Info:", {
+//         id: result.info.id,
+//         type: result.info.type,
+//         title: result.info.name,
+//         artist: result.info.artists,
+//         duration: result.info.duration_ms,
+//         image: result.info.image,
+//         gid: result.info.gid,
+//       });
+
+//       console.log("Download URL:", result.url);
+//     } catch (error) {
+//       console.error("Error:", error);
+//     }
+//   }
+
+//   async downloadMultipleTracks(): Promise<void> {
+//     const results = [];
+
+//     for (const url of this.exampleUrls) {
+//       try {
+//         console.log(`Downloading: ${url}`);
+//         const result = await spotifydl(url);
+//         results.push({
+//           url,
+//           success: true,
+//           data: result,
+//         });
+//         console.log(`✓ Successfully downloaded: ${result.info.name}`);
+//       } catch (error) {
+//         results.push({
+//           url,
+//           success: false,
+//           error: error instanceof Error ? error.message : "Unknown error",
+//         });
+//         console.error(`✗ Failed to download: ${url}`);
+//       }
+//     }
+
+//     console.log("\nDownload Summary:");
+//     console.log(`Total: ${results.length}`);
+//     console.log(`Success: ${results.filter((r) => r.success).length}`);
+//     console.log(`Failed: ${results.filter((r) => !r.success).length}`);
+//   }
+
+//   async downloadWithErrorHandling(): Promise<void> {
+//     const url = "https://open.spotify.com/track/invalid-track-id";
+
+//     try {
+//       const result = await spotifydl(url);
+//       console.log("Download successful:", result);
+//     } catch (error) {
+//       if (error instanceof Error) {
+//         console.error("Download failed:", error.message);
+//       } else {
+//         console.error("Unknown error occurred");
+//       }
+//     }
+//   }
+
+//   async downloadAndSave(): Promise<void> {
+//     try {
+//       const url = "https://open.spotify.com/track/4iV5W9uYEdYUVa79Axb7Rh";
+//       const result = await spotifydl(url);
+
+//       const trackData = {
+//         metadata: {
+//           id: result.info.id,
+//           type: result.info.type,
+//           name: result.info.name,
+//           artists: result.info.artists,
+//           duration: result.info.duration_ms,
+//           image: result.info.image,
+//           gid: result.info.gid,
+//         },
+//         downloadUrl: result.url,
+//         downloadedAt: new Date().toISOString(),
+//       };
+
+//       console.log(
+//         "Track data ready for saving:",
+//         JSON.stringify(trackData, null, 2)
+//       );
+//     } catch (error) {
+//       console.error("Failed to process track:", error);
+//     }
+//   }
+
+//   async runAllExamples(): Promise<void> {
+//     console.log("=== Spotify Downloader Examples ===\n");
+
+//     console.log("1. Basic Usage:");
+//     await this.basicUsage();
+
+//     console.log("\n2. Multiple Tracks Download:");
+//     await this.downloadMultipleTracks();
+
+//     console.log("\n3. Error Handling:");
+//     await this.downloadWithErrorHandling();
+
+//     console.log("\n4. Download and Save:");
+//     await this.downloadAndSave();
+//   }
+// }
+
+// const examples = new SpotifyExamples();
+
+// export const runSpotifyExamples = async (): Promise<void> => {
+//   await examples.runAllExamples();
+// };
+
+// export const quickSpotifyDownload = async (url: string): Promise<void> => {
+//   try {
+//     console.log(`Starting download for: ${url}`);
+//     const result = await spotifydl(url);
+
+//     console.log("Download completed!");
+//     console.log(`ID: ${result.info.id}`);
+//     console.log(`Type: ${result.info.type}`);
+//     console.log(`Title: ${result.info.name}`);
+//     console.log(`Artist(s): ${result.info.artists}`);
+//     console.log(`Duration: ${result.info.duration_ms}ms`);
+//     console.log(`GID: ${result.info.gid}`);
+//     console.log(`Download URL: ${result.url}`);
+//   } catch (error) {
+//     console.error("Download failed:", error);
+//   }
+// };
+
+// if (require.main === module) {
+//   runSpotifyExamples();
 // }
